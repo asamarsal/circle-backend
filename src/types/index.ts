@@ -44,16 +44,6 @@ export interface Following {
   id: number;
   following_id: number;
   follower_id: number;
-  following: {
-    id: number;
-    username: string;
-    full_name: string;
-    photo_profile: string | null;
-  };
-  follower: {
-    id: number;
-    username: string;
-    full_name: string;
-    photo_profile: string | null;
-  };
+  following: User;
+  follower: User;
 }
