@@ -31,7 +31,7 @@ export async function getFollows(req: Request, res: Response) {
         }
       });
 
-      const formattedFollowing = following.map(follow => ({
+      const formattedFollowing = following.map((follow: Following) => ({
         id: follow.following.id.toString(),
         username: follow.following.username,
         name: follow.following.full_name,
