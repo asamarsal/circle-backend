@@ -142,7 +142,7 @@ export async function getLikes(req: Request, res: Response) {
       }
     });
 
-    const formattedLikes = likes.map(like => ({
+    const formattedLikes = likes.map((like: Like) => ({
       user: {
         id: like.user.id,
         username: like.user.username,

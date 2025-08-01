@@ -28,7 +28,7 @@ export async function getReplies(req: Request, res: Response) {
       }
     });
 
-    const formattedReplies = replies.map(reply => ({
+    const formattedReplies = replies.map((reply: Reply) => ({
       id: reply.id,
       content: reply.content,
       user: {

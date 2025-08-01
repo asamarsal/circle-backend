@@ -42,10 +42,9 @@ export async function getThreads(req: Request, res: Response) {
       }
     });
 
-    const threadsWithLikeStatus = threads.map(thread => ({
+    const threadsWithLikeStatus = threads.map((thread: Thread) => ({
       id: thread.id,
       content: thread.content,
-      // Gambar Postingan
       image: thread.image || null,
       user: {
         id: thread.user?.id,
@@ -56,7 +55,7 @@ export async function getThreads(req: Request, res: Response) {
       created_at: thread.created_at,
       likes: thread._count.likes,
       reply: thread._count.replies,
-      isLiked: userId ? thread.likes.some(like => like.user_id === userId) : false
+      isLiked: userId ? thread.likes.some((like: Like) => like.user_id === userId) : false
     }));
 
     res.status(200).json({

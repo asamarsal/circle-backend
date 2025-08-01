@@ -32,7 +32,7 @@ export async function searchUsers(req: Request, res: Response) {
       }
     });
 
-    const formattedUsers = users.map(user => ({
+    const formattedUsers = users.map((user: User & { _count: { followedBy: number } }) => ({
       id: user.id.toString(),
       username: user.username,
       name: user.full_name,
