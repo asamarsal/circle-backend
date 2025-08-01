@@ -4,7 +4,7 @@
   "description": "Backend for circle sosial media",
   "main": "index.js",
   "scripts": {
-    "build": "npx prisma generate && tsc",
+    "build": "prisma generate && tsc",
     "start": "node dist/src/app.js",
     "dev": "ts-node-dev src/app.ts",
     "postinstall": "prisma generate"
