@@ -36,32 +36,3 @@ export function authenticateSuppliers(req: Request, res: Response, next: NextFun
     return;
   }
 }
-
-export const authorizeSupplier = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Promise<void> => {
-  try {
-    const supplier = (req as any).user;
-    const productId = parseInt(req.params.id);
-    
-    const product = await prisma.product.findUnique({
-      where: { id: productId }
-    });
-
-    if (!product) {
-      res.status(404).json({ message: "Product not found" });
-      return;
-    }
-
-    if (product.supplierId !== supplier.id) {
-      res.status(403).json({ message: "You are not the supplier of this product" });
-      return;
-    }
-
-    next();
-  } catch (err) {
-    res.status(403).json({ message: "Not authorized" });
-  }
-};

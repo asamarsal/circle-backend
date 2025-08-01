@@ -17,7 +17,7 @@ export async function handleRegister(req: Request, res: Response) {
     const data = await register(email, password, username, full_name);
 
     res.status(200).json({ code: 200, message: "Registrasi berhasil. Akun berhasil dibuat.", data: {
-        user_id: data.id.toString(),
+        user_id: data.id,
         username: data.username,
         name: data.full_name,
         email: data.email,
@@ -49,7 +49,7 @@ export async function handleLogin(req: Request, res: Response) {
       status: "success",
       message: "Login successful.",
       data: {
-        user_id: userData.id.toString(),
+        user_id: userData.id,
         username: userData.username,
         name: userData.name,
         email: userData.email,

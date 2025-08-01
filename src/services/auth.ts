@@ -4,7 +4,6 @@ import { prisma } from "../prisma/client";
 import { signToken } from "../utils/jwt";
 import { loginSchema } from "../validation/auth";
 
-// Add profile parameter to registerUser function
 export async function register(email: string, password: string, full_name: string, username: string) {
   if (!email.match(/@/) || password.length < 6) {
     throw new Error("Invalid email or password");

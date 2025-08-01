@@ -1,8 +1,7 @@
-// src/routes/auth.route.ts
 import express, { Request, Response, NextFunction } from "express";
 import { handleRegister, handleLogin } from "../controllers/auth";
 
-import { authenticate, authenticateSuppliers , authorizeSupplier} from "../middlewares/auth";
+import { authenticate, authenticateSuppliers} from "../middlewares/auth";
 import { productSchema } from "../validation/auth";
 
 import { prisma } from "../prisma/client";
