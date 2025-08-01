@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { prisma } from "../prisma/client";
+import { Like } from '../types';
 
 export async function likeThread(req: Request, res: Response) {
   try {

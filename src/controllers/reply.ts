@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { prisma } from "../prisma/client";
+import { Reply } from '../types';
 
 export async function getReplies(req: Request, res: Response) {
   try {

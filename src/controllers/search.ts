@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { prisma } from "../prisma/client";
+import { User } from '../types';
 
 export async function searchUsers(req: Request, res: Response) {
   try {

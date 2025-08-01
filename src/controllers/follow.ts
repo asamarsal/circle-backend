@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { prisma } from "../prisma/client";
+import { Following } from '../types';
 
 export async function getFollows(req: Request, res: Response) {
   try {

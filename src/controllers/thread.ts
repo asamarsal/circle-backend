@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { prisma } from "../prisma/client";
 import { createThreadSchema } from "../validation/thread";
 import multer from "multer";
+import { Thread, Like } from '../types';
 
 interface MulterRequest extends Request {
   file?: Express.Multer.File;
